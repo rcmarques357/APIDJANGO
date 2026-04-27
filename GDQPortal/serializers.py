@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from.models import ProcessInformation, ProcessKPIInformation, ProcessKPIValue, ProcessTask
+from.models import ProcessInformation
 
 
 class ProcessInformationSerializer(serializers.ModelSerializer):

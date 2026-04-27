@@ -27,34 +27,4 @@ class Migration(migrations.Migration):
                 ('process_status', models.CharField(choices=[('notstarted', 'Not Started'), ('inprogress', 'In Progress'), ('onhold', 'On Hold'), ('cancelled', 'Cancelled'), ('blocked', 'Blocked'), ('completed', 'Completed')], default='notstarted', max_length=20)),
             ],
         ),
-        migrations.CreateModel(
-            name='ProcessKPIInformation',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('kpi_name', models.CharField(max_length=255)),
-                ('kpi_business_impact', models.CharField(max_length=500)),
-                ('kpi_measurement_method', models.CharField(max_length=500)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='ProcessKPIValue',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('kpi_name', models.CharField(max_length=255)),
-                ('kpi_measurement_value', models.CharField(max_length=500)),
-                ('kpi_measurement_Date', models.DateField(default=datetime.date.today)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='ProcessTask',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('task_process_number', models.CharField(max_length=10)),
-                ('task_name', models.CharField(max_length=255)),
-                ('task_start_date', models.DateField(default=datetime.date.today)),
-                ('task_completion_date', models.DateField()),
-                ('task_status', models.CharField(choices=[('notstarted', 'Not Started'), ('inprogress', 'In Progress'), ('onhold', 'On Hold'), ('cancelled', 'Cancelled'), ('blocked', 'Blocked')], default='notstarted', max_length=20)),
-                ('task_weight', models.IntegerField(validators=[django.core.validators.MinValueValidator(0), django.core.validators.MaxValueValidator(100)])),
-            ],
-        ),
     ]
